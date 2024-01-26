@@ -37,6 +37,7 @@ int main(void) {
 	{2,3,4,5,6,4,3,2}
 	};
 	int i1,i2,j1,j2;
+	char input1, input2;
 	int flagForErrors = 0;
 	int turn = 0;
 	while (1) {
@@ -64,8 +65,14 @@ int main(void) {
 		printf("Black Check: %d \n", lookForBlackCheck(8,8,board[0]));
 		printf("Turn: %d \n", turn);
 		printf("Insert next move: \n");
-		scanf("%1d%1d %1d%1d", &i1,&i2,&j1,&j2);
-		printf("i1 is: %d i2 is: %d j1 is: %d j2 is: %d \n",i1,i2,j1,j2);
+		scanf("%c%d %c%d", &input1,&i1,&input2,&j1);
+		// Translate characters to numbers
+    i2 = input1 - 'a';
+    j2 = input2 - 'a';
+		// Shift numbers
+		i1 -= 1;
+		j1 -= 1;
+		printf("x is: %c y is: %d x is: %c y is: %d \n",i1,input1,j1,input1);
 		if (i1 > 7 || i2 > 7 || j1 > 7 || j2 > 7) {
 			printf("Position values not valid: they lie outside the board \n");
 		} else if (board[i1][i2] == 0) {

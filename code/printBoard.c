@@ -10,40 +10,40 @@ void printBoard(int rows, int cols, int *board) {
                     printf("|  |");
                     break;
                 case 1:
-                    printf("|♙ |");
+                    printf("|p |");
                     break;
                 case 2:
-                    printf("|♖ |");
+                    printf("|r |");
                     break;
                 case 3:
-                    printf("|♘ |");
+                    printf("|n |");
                     break;
                 case 4:
-                    printf("|♗ |");
+                    printf("|b |");
                     break;
                 case 5:
-                    printf("|♕ |");
+                    printf("|q |");
                     break;
                 case 6:
-                    printf("|♔ |");
+                    printf("|k |");
                     break;
                 case 7:
-                    printf("|♟ ︎|");
+                    printf("|\033[0;36mP\033[0;37m |");
                     break;
                 case 8:
-                    printf("|♜ |");
+                    printf("|\033[0;36mR\033[0;37m |");
                     break;
                 case 9:
-                    printf("|♞ |");
+                    printf("|\033[0;36mN\033[0;37m |");
                     break;
                 case 10:
-                    printf("|♝ |");
+                    printf("|\033[0;36mB\033[0;37m |");
                     break;
                 case 11:
-                    printf("|♛ |");
+                    printf("|\033[0;36mQ\033[0;37m |");
                     break;
                 case 12:
-                    printf("|♚ |");
+                    printf("|\033[0;36mK\033[0;37m |");
                     break;
             }
         }
