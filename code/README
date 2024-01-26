@@ -1,0 +1,5 @@
+This is a fork of github.com/hsnborn22/C-HESS.
+A terminal chess game. This fork adds and removes features for embedding the programm in a minimal linux distro.
+
+Run the program by simply running the ./build.sh file, it should spit out a chess execuatble.
+Simply run it.
