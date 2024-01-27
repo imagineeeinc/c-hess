@@ -14,7 +14,9 @@ int lookForBlackCheck(int rows, int cols, int *board);
 void copyArray(int * arrayToCopy, int * copyingArray, int arrayToCopyLength);
 void generateMenu();
 
-
+void clearScreen() {
+  printf("\033[H\033[J");  // ANSI escape code to clear the screen
+}
 
 /*  ------------  Pieces notation: ------------
 1 -> white pawn          | 7 -->  black pawn
@@ -59,6 +61,7 @@ int main(void) {
 			printf("Not expected.");
 		}
 	}
+	clearScreen();
 	while (1) {
 		printBoard(8,8, board[0]);
 		printf("White Check: %d \n", lookForWhiteCheck(8,8,board[0]));
@@ -66,13 +69,17 @@ int main(void) {
 		printf("Turn: %d \n", turn);
 		printf("Insert next move: \n");
 		scanf("%c%d %c%d", &input1,&i1,&input2,&j1);
+		if (input1 == 'x') {
+			clearScreen();
+			exit(0);
+		}
 		// Translate characters to numbers
     i2 = input1 - 'a';
     j2 = input2 - 'a';
 		// Shift numbers
 		i1 -= 1;
 		j1 -= 1;
-		printf("x is: %c y is: %d x is: %c y is: %d \n",i1,input1,j1,input1);
+		// printf("x is: %c y is: %d x is: %c y is: %d \n",i1,input1,j1,input1);
 		if (i1 > 7 || i2 > 7 || j1 > 7 || j2 > 7) {
 			printf("Position values not valid: they lie outside the board \n");
 		} else if (board[i1][i2] == 0) {
